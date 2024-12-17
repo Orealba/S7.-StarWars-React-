@@ -8,7 +8,7 @@ export const Header = () => {
         <img
           src={logo}
           alt="logo"
-          className="mt-4 w-32 h-14 sm:w-40 sm:h-16 md:w-48 md:h-20 lg:w-[12.5rem] lg:h-[5.8rem] mx-auto col-start-2"
+          className="mt-4 w-30 h-18 sm:w-40 sm:h-16 md:w-48 md:h-20 lg:w-[12.5rem] lg:h-[5.8rem] mx-auto col-start-2"
         />
         <div className="flex gap-4 items-center justify-end">
           <button
