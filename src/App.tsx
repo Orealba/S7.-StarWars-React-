@@ -3,7 +3,7 @@ import './App.css';
 import { Header } from './Components/Header';
 import { Navbar } from './Components/Navbar';
 import { Routes, Route } from 'react-router-dom';
-import { StarshipCard } from './Components/StarshipCard';
+import { Starships } from './Pages/Starships'
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
         />
         <Route
           path="/ships"
-          element={<StarshipCard />}
+          element={<Starships />}
         />
       </Routes>
     </>
