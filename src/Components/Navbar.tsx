@@ -1,4 +1,5 @@
 import './styles/Navbar.css';
+import { Link } from 'react-router-dom';
 
 export const Navbar = () => {
   return (
@@ -8,18 +9,18 @@ export const Navbar = () => {
           <div className="flex justify-center items-center ml- ">
             <ul className="flex space-x-1 items-center">
               <li className="border-x border-gray-700 border-b-2 border-b-transparent px-3 py-2 hover:border-b-blue-500 active:border-b-blue-500">
-                <a
-                  href="#"
+                <Link
+                  to="/"
                   className="text-gray-400 rounded md:bg-transparent hover:text-white active:text-white hover:font-bold active:font-bold">
                   HOME
-                </a>
+                </Link>
               </li>
               <li className="border-r border-gray-700 border-b-2 border-b-transparent py-2 px-1 hover:border-b-blue-500 active:border-b-blue-500">
-                <a
-                  href="#"
+                <Link
+                  to="/ships"
                   className="text-gray-400 rounded md:bg-transparent hover:text-white active:text-white hover:font-bold active:font-bold">
                   STARSHIPS
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

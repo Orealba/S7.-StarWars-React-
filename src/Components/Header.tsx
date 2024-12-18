@@ -1,15 +1,18 @@
+import { Link } from 'react-router-dom';
 import logo from '../assets/images/logo.png';
 import '../Components/styles/Header.css';
 
 export const Header = () => {
   return (
     <>
-      <div className="grid grid-cols-3 fixed  top-0 left-1/2 transform -translate-x-1/2 z-50 w-full px-4">
-        <img
-          src={logo}
-          alt="logo"
-          className="mt-4 w-30 h-18 sm:w-40 sm:h-16 md:w-48 md:h-20 lg:w-[12.5rem] lg:h-[5.8rem] mx-auto col-start-2"
-        />
+      <div className="grid grid-cols-3 fixed top-0 left-1/2 transform -translate-x-1/2 z-50 w-full px-4">
+        <Link to="/" className="mt-4 col-start-2">
+          <img
+            src={logo}
+            alt="logo"
+            className="w-30 h-18 sm:w-40 sm:h-16 md:w-48 md:h-20 lg:w-[12.5rem] lg:h-[5.8rem] mx-auto"
+          />
+        </Link>
         <div className="flex gap-4 items-center justify-end">
           <button
             type="button"
