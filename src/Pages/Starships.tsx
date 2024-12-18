@@ -19,8 +19,8 @@ export const Starships = () => {
           flexDirection: 'column',
         }}>
         <div className="flex justify-start mt-0 ">
-          <h1 className="text-white text-7xl mb-16 font-bold ml-5 mt-20">
-            STARSHIPS
+          <h1 className="text-white text-7xl sm:text-5xl md:text-6xl lg:text-7xl mb-16 font-bold ml-12 mt-20 font-['Star_Jedi']">
+            Starships
           </h1>
         </div>
 
@@ -29,8 +29,8 @@ export const Starships = () => {
 
           <button
             type="button"
-            className=" px-12 py-4 text-lg font-bold text-white bg-black border-2 border-yellow-400 rounded-full hover:bg-yellow-400 hover:text-black hover:scale-105 transition-all duration-300">
-            VER MÁS
+            className=" px-12 py-4 text-lg font-bold text-white bg-black border-2 border-yellow-400 rounded-full hover:bg-yellow-400 hover:text-black hover:scale-105 transition-all duration-300 font-['Star_Jedi']">
+            Cargar más
           </button>
         </div>
       </main>
