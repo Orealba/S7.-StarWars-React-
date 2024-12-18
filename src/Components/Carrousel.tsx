@@ -9,22 +9,22 @@ export const Carrousel = () => {
       <Carousel
         pauseOnHover
         slideInterval={5000}
-        className="mt-20 mx-auto max-w-[80%]">
-        <div className="relative h-[calc(100vh-12rem)]">
-          <img
-            src={starWars1}
-            className="w-full h-full object-cover"
-            alt="Star Wars Background"
-          />
-        </div>
-        <div className="relative h-[calc(100vh-12rem)]">
+        className="mt-12 mx-auto max-w-[80%]">
+        <div className="relative h-[calc(100vh-16rem)]">
           <img
             src={starWars3}
             className="w-full h-full object-cover"
             alt="Star Wars Background"
           />
         </div>
-        <div className="relative h-[calc(100vh-12rem)]">
+        <div className="relative h-[calc(100vh-16rem)]">
+          <img
+            src={starWars1}
+            className="w-full h-full object-cover"
+            alt="Star Wars Background"
+          />
+        </div>
+        <div className="relative h-[calc(100vh-16rem)]">
           <img
             src={starWars4}
             className="w-full h-full object-cover"
