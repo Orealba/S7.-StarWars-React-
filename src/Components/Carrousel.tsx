@@ -9,7 +9,7 @@ export const Carrousel = () => {
       <Carousel
         pauseOnHover
         slideInterval={5000}
-        className="mt-12 mx-auto max-w-[80%]">
+        className="mt-12 mx-auto max-w-[75%]">
         <div className="relative h-[calc(100vh-16rem)]">
           <img
             src={starWars3}
