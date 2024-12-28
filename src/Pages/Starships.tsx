@@ -6,11 +6,11 @@ export const Starships = () => {
     <div className="h-screen overflow-y-auto">
       <main
         style={{
-          position: 'fixed',
+          position: 'absolute',
           top: 170,
           left: 0,
           right: 0,
-          bottom: 0,
+          // bottom: 0,
           backgroundImage: `url(${bgImage})`,
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
