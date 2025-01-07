@@ -5,6 +5,7 @@ import { Navbar } from './Components/Navbar';
 import { Routes, Route } from 'react-router-dom';
 import { Starships } from './Pages/Starships';
 import { StarshipProvider } from './Context/StarshipsContext';
+import { ShipFile } from './Pages/ShipFile';
 
 function App() {
   return (
@@ -21,6 +22,10 @@ function App() {
           <Route
             path="/ships"
             element={<Starships />}
+          />
+          <Route
+            path="/info"
+            element={<ShipFile />}
           />
         </Routes>
       </>
