@@ -59,7 +59,7 @@ export const StarshipProvider: React.FC<{ children: React.ReactNode }> = ({
 
   useEffect(() => {
     const loadInitialStarships = async () => {
-      await fetchStarships(); // Cargar las naves iniciales
+      await fetchStarships(); 
     };
 
     loadInitialStarships();
