@@ -23,8 +23,9 @@ function App() {
             path="/ships"
             element={<Starships />}
           />
+          {/*OJO AQUÍ CON EL NAME EN EL LINK */}
           <Route
-            path="/info"
+            path="/ships/:name/info"
             element={<ShipFile />}
           />
         </Routes>

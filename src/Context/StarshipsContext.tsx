@@ -9,6 +9,11 @@ interface StarshipContextType {
 interface Starship {
   name: string;
   model: string;
+  manufacturer: string;
+  cost_in_credits: string;
+  length: number;
+  max_atmosphering_speed: number;
+  crew: number;
 }
 interface StarshipContextType {
   starships: Starship[];
@@ -59,7 +64,8 @@ export const StarshipProvider: React.FC<{ children: React.ReactNode }> = ({
 
   useEffect(() => {
     const loadInitialStarships = async () => {
-      await fetchStarships(); 
+      await fetchStarships();
+      console.log('Naves cargadas:', starships);
     };
 
     loadInitialStarships();
