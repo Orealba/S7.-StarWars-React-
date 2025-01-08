@@ -1,9 +1,15 @@
 import { ShipInfoCard } from '../Components/ShipInfoCard';
+import { useParams } from 'react-router-dom';
 import { PilotCard } from '../Components/PilotCard';
 import { MovieCard } from '../Components/MovieCard';
 import bgInfo from '../assets/images/BgInfo.jpg';
+import { useStarshipContext } from '../Context/StarshipsContext';
 
-export const ShipFile = ({ starshipName }) => {
+export const ShipFile = () => {
+  const { name } = useParams<{ name: string }>();
+  const { starships } = useStarshipContext();
+  const starship = starships.find((s) => s.name === name);
+
   return (
     <>
       <div className="h-screen overflow-y-auto">
@@ -25,7 +31,11 @@ export const ShipFile = ({ starshipName }) => {
                 STARSHIP
               </h5>
 
-              <ShipInfoCard starship={starshipName} />
+              {starship ? (
+                <ShipInfoCard starship={starship} /> // Pasa el objeto starship completo
+              ) : (
+                <div>No hay información de la nave disponible.</div>
+              )}
             </div>
             <div>
               <h5 className="flex justify-start border-y-2 border-gray-400 pl-8 mt-4 ">
