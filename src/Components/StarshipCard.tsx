@@ -1,6 +1,12 @@
+
 interface Starship {
   name: string;
   model: string;
+  manufacturer: string;
+  cost_in_credits: string;
+  length: number;
+  max_atmosphering_speed: number;
+  crew: number;
 }
 export const StarshipCard: React.FC<{ starship: Starship }> = ({
   starship,

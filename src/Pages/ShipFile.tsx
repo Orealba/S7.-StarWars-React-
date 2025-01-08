@@ -3,7 +3,7 @@ import { PilotCard } from '../Components/PilotCard';
 import { MovieCard } from '../Components/MovieCard';
 import bgInfo from '../assets/images/BgInfo.jpg';
 
-export const ShipFile = ({ starship }) => {
+export const ShipFile = ({ starshipName }) => {
   return (
     <>
       <div className="h-screen overflow-y-auto">
@@ -25,7 +25,7 @@ export const ShipFile = ({ starship }) => {
                 STARSHIP
               </h5>
 
-              <ShipInfoCard starship={starship} />
+              <ShipInfoCard starship={starshipName} />
             </div>
             <div>
               <h5 className="flex justify-start border-y-2 border-gray-400 pl-8 mt-4 ">
