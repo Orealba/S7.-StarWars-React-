@@ -1,24 +1,8 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
-
-interface Pilot {
-  id: number;
-  name: string;
-  // Agrega más propiedades según la API de pilotos
-}
-
-interface Movie {
-  id: number;
-  title: string;
-  // Agrega más propiedades según la API de películas
-}
 interface StarshipContextType {
   starships: Starship[];
-  pilots: Pilot[];
-  movies: Movie[];
   fetchStarships: (url?: string) => Promise<void>;
-  fetchPilots: () => Promise<void>;
-  fetchMovies: () => Promise<void>;
   loadMore: () => Promise<void>;
   allLoaded: boolean;
 }
