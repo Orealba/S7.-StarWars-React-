@@ -6,30 +6,33 @@ import { Routes, Route } from 'react-router-dom';
 import { Starships } from './Pages/Starships';
 import { StarshipProvider } from './Context/StarshipsContext';
 import { ShipFile } from './Pages/ShipFile';
+import { ShipsInfoProvider } from './Context/ShipsInfoContext';
 
 function App() {
   return (
     <StarshipProvider>
-      <>
-        <Header></Header>
-        <Navbar></Navbar>
+      <ShipsInfoProvider>
+        <>
+          <Header></Header>
+          <Navbar></Navbar>
 
-        <Routes>
-          <Route
-            path="/"
-            element={<Home />}
-          />
-          <Route
-            path="/ships"
-            element={<Starships />}
-          />
-          {/*OJO AQUÍ CON EL NAME EN EL LINK */}
-          <Route
-            path="/ships/:id/info"
-            element={<ShipFile />}
-          />
-        </Routes>
-      </>
+          <Routes>
+            <Route
+              path="/"
+              element={<Home />}
+            />
+            <Route
+              path="/ships"
+              element={<Starships />}
+            />
+            
+            <Route
+              path="/ships/:id/info"
+              element={<ShipFile />}
+            />
+          </Routes>
+        </>
+      </ShipsInfoProvider>
     </StarshipProvider>
   );
 }

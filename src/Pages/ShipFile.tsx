@@ -1,14 +1,28 @@
 import { ShipInfoCard } from '../Components/ShipInfoCard';
 import { useParams } from 'react-router-dom';
-// import { PilotCard } from '../Components/PilotCard';
-import { MovieCard } from '../Components/MovieCard';
+// import { Film } from '../Components/Film'; // Asegúrate de tener un componente para mostrar films
+import { useShipsInfoContext } from '../Context/ShipsInfoContext'; // Asegúrate de importar el nuevo contexto
 import bgInfo from '../assets/images/BgInfo.jpg';
-import { useStarshipContext } from '../Context/StarshipsContext';
+import { useEffect } from 'react';
 
 export const ShipFile = () => {
-  const { id } = useParams<{ id: string }>();
-  const { starships } = useStarshipContext();
-  const starship = starships.find((s) => s.id.toString() === id);
+  const { id } = useParams<{ id: string }>(); // Cambia 'name' a 'id'
+  const {
+    starship,
+    pilots,
+    films,
+    fetchStarshipById,
+    fetchPilots,
+    fetchFilms,
+  } = useShipsInfoContext();
+
+  useEffect(() => {
+    if (id) {
+      fetchStarshipById(Number(id)); // Llama a la función con el ID de la nave
+      // fetchPilots(); // Opcional: si quieres cargar los pilotos
+      // fetchFilms(); // Opcional: si quieres cargar los films
+    }
+  }, [id]);
 
   return (
     <>
@@ -41,13 +55,13 @@ export const ShipFile = () => {
               <h5 className="flex justify-start border-y-2 border-gray-400 pl-8 mt-4 ">
                 PILOTS
               </h5>
-              {/* <PilotCard /> */}
+              {/* Aquí puedes mapear y mostrar los pilotos */}
             </div>
             <div>
               <h5 className="flex justify-start border-y-2 border-gray-400 pl-8 mt-4">
-                MOVIES
+                FILMS
               </h5>
-              <MovieCard />
+              {/* Aquí puedes mapear y mostrar los films */}
             </div>
           </div>
         </main>
