@@ -1,14 +1,14 @@
 import { ShipInfoCard } from '../Components/ShipInfoCard';
 import { useParams } from 'react-router-dom';
-import { PilotCard } from '../Components/PilotCard';
+// import { PilotCard } from '../Components/PilotCard';
 import { MovieCard } from '../Components/MovieCard';
 import bgInfo from '../assets/images/BgInfo.jpg';
 import { useStarshipContext } from '../Context/StarshipsContext';
 
 export const ShipFile = () => {
-  const { name } = useParams<{ name: string }>();
+  const { id } = useParams<{ id: string }>();
   const { starships } = useStarshipContext();
-  const starship = starships.find((s) => s.name === name);
+  const starship = starships.find((s) => s.id.toString() === id);
 
   return (
     <>
@@ -41,7 +41,7 @@ export const ShipFile = () => {
               <h5 className="flex justify-start border-y-2 border-gray-400 pl-8 mt-4 ">
                 PILOTS
               </h5>
-              <PilotCard />
+              {/* <PilotCard /> */}
             </div>
             <div>
               <h5 className="flex justify-start border-y-2 border-gray-400 pl-8 mt-4">

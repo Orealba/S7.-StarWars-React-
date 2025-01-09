@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 
 interface Starship {
+  id: number;
   name: string;
   model: string;
   manufacturer: string;
@@ -15,7 +16,7 @@ export const StarshipCard: React.FC<{ starship: Starship }> = ({
   return (
     <div className="grid gap-4 p-4">
       <Link
-        to={`/ships/${starship.name}/info`} // Cambia la ruta según tu configuración
+        to={`/ships/${starship.id}/info`} // Cambia la ruta según tu configuración
         className="block 
             w-[400px] sm:w-[400px] md:w-[600px] lg:w-[800px] xl:w-[1100px] 
             h-[70px] sm:h-[80px] md:h-[100px] 

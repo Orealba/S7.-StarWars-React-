@@ -25,7 +25,7 @@ function App() {
           />
           {/*OJO AQUÍ CON EL NAME EN EL LINK */}
           <Route
-            path="/ships/:name/info"
+            path="/ships/:id/info"
             element={<ShipFile />}
           />
         </Routes>

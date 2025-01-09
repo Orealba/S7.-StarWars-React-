@@ -1,19 +1,37 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
+
+interface Pilot {
+  id: number;
+  name: string;
+  // Agrega más propiedades según la API de pilotos
+}
+
+interface Movie {
+  id: number;
+  title: string;
+  // Agrega más propiedades según la API de películas
+}
 interface StarshipContextType {
   starships: Starship[];
+  pilots: Pilot[];
+  movies: Movie[];
   fetchStarships: (url?: string) => Promise<void>;
+  fetchPilots: () => Promise<void>;
+  fetchMovies: () => Promise<void>;
   loadMore: () => Promise<void>;
   allLoaded: boolean;
 }
 interface Starship {
+  id: number;
   name: string;
   model: string;
   manufacturer: string;
   cost_in_credits: string;
-  length: number;
-  max_atmosphering_speed: number;
-  crew: number;
+  length: string;
+  max_atmosphering_speed: string;
+  crew: string;
+  pilots: string[];
 }
 interface StarshipContextType {
   starships: Starship[];
@@ -30,7 +48,7 @@ export const StarshipProvider: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   const [starships, setStarships] = useState<Starship[]>([]);
   const [nextUrl, setNextUrl] = useState<string | null>(
-    'https://swapi.py4e.com/api/starships/',
+    'https://swapi.orealbasoriano.com/api/starships',
   );
   const [allLoaded, setAllLoaded] = useState(false);
 
@@ -38,7 +56,7 @@ export const StarshipProvider: React.FC<{ children: React.ReactNode }> = ({
     try {
       const response = await fetch(url);
       const data = await response.json();
-      const uniqueStarships = data.results.filter(
+      const uniqueStarships = data.data.filter(
         (starship: Starship) =>
           !starships.some(
             (existingStarship) => existingStarship.name === starship.name,
@@ -46,9 +64,9 @@ export const StarshipProvider: React.FC<{ children: React.ReactNode }> = ({
       );
 
       setStarships((prevStarships) => [...prevStarships, ...uniqueStarships]);
-      setNextUrl(data.next);
+      setNextUrl(data.next_page_url);
 
-      if (!data.next) {
+      if (!data.next_page_url) {
         setAllLoaded(true);
       }
     } catch (error) {

@@ -1,13 +1,15 @@
 import { Link } from 'react-router-dom';
 
 interface Starship {
+  id: number;
   name: string;
   model: string;
   manufacturer: string;
   cost_in_credits: string;
-  max_atmosphering_speed: string;
   length: string;
+  max_atmosphering_speed: string;
   crew: string;
+  pilots: string[];
 }
 
 export const ShipInfoCard: React.FC<{ starship: Starship }> = ({
@@ -16,7 +18,7 @@ export const ShipInfoCard: React.FC<{ starship: Starship }> = ({
   return (
     <div style={{ fontFamily: 'Aldrich' }}>
       <Link
-        to={`/ships/${starship.name}/info`}
+        to={`/ships/${starship.id}/info`}
         className="block 
             w-[1000px] sm:w-[400px] md:w-[800px] lg:w-[900px] xl:w-[1500px] 
             h-[100px] sm:h-[80px] md:h-[230px] 
