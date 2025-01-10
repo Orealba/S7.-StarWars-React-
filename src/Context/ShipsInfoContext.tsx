@@ -1,5 +1,14 @@
 import React, { createContext, useContext, useState } from 'react';
 
+interface Pilot {
+    id: number;
+    name: string;
+  }
+  
+  interface Film {
+    id: number;
+    title: string;
+  }
 interface Starship {
   id: number;
   name: string;
