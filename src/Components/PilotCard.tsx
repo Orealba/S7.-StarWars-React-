@@ -21,7 +21,7 @@ export const PilotCard: React.FC<{ pilot: Pilot; starship: Starship }> = ({
     const fetchImage = async () => {
       try {
         const response = await fetch(
-          `https://starwars-visualguide.com/assets/img/character/${pilot.id}.jpg`, // Cambiado a pilot.id
+          `https://starwars-visualguide.com/assets/img/characters/${pilot.id}.jpg`, // Asegúrate de que esto sea correcto
         );
         if (response.ok) {
           setImageUrl(response.url); // Establece la URL de la imagen
@@ -39,32 +39,35 @@ export const PilotCard: React.FC<{ pilot: Pilot; starship: Starship }> = ({
   }, [pilot.id]);
 
   return (
-    <div style={{ fontFamily: 'Aldrich' }}>
+    <div
+      className=" container"
+      style={{ fontFamily: 'Aldrich' }}>
       <Link
         to={`/pilots/${pilot.id}`}
         className="block
-            w-[400px] sm:w-[400px] md:w-[800px] lg:w-[900px] xl:w-[400px]
-            h-[80px] sm:h-[60px] md:h-[230px]
+            w-[400px] sm:w-[400px] md:w-[800px] lg:w-[900px] xl:w-[210px]
+            h-[80px] sm:h-[60px] md:h-[280px]
             p-3 sm:p-4 md:p-6 bg-gray-900/80 border border-gray-700 rounded-lg shadow
             text-left
-            mx-auto"
+            mx-auto "
         style={{ cursor: 'default' }}>
         <div className=" ">
           {imageUrl && !imageError ? (
             <img
               src={imageUrl}
               alt={pilot.name}
-              className="max-w-80"
+              className="max-w-40"
             />
           ) : (
-            <div className="bg-gray-700 h-full flex items-center justify-center">
+            <div>
               <span className="text-gray-400">Imagen no disponible</span>{' '}
               {/* Mensaje alternativo */}
             </div>
           )}
-        </div>
-        <div className="">
-          <h4 className="text-xl font-bold text-gray-400">{pilot.name}</h4>
+
+          <h4 className="flex justify-center text-md font-bold text-gray-400 mt-2">
+            {pilot.name}
+          </h4>
         </div>
       </Link>
     </div>

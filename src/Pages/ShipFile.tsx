@@ -32,7 +32,7 @@ export const ShipFile = () => {
             backgroundRepeat: 'no-repeat',
             backgroundAttachment: 'fixed',
           }}>
-          <div className="pl-8">
+          <div className="pl-8 mt-0">
             <div>
               <h5 className="flex justify-start border-y-2 border-gray-400 pl-8 mb-4">
                 STARSHIP
@@ -48,13 +48,13 @@ export const ShipFile = () => {
               <h5 className="flex justify-start border-y-2 border-gray-400 pl-8 mt-4 ">
                 PILOTS
               </h5>
-              <div className="flex justify-between m-4">
+              <div className="flex justify-between m-6">
                 {pilots.length > 0 ? (
                   pilots.map((pilot) => (
                     <PilotCard
                       key={pilot.id}
                       pilot={pilot}
-                      starship={starship} // Pasa el objeto starship a PilotCard
+                      starship={starship}
                     />
                   ))
                 ) : (
@@ -63,10 +63,12 @@ export const ShipFile = () => {
               </div>
             </div>
             <div>
-              <h5 className="flex justify-start border-y-2 border-gray-400 pl-8 mt-4">
+              <h5 className="flex justify-start border-y-2 border-gray-400 pl-8 mt-4 ">
                 FILMS
               </h5>
-              <div className="flex justify-between m-4">
+              <div className="flex justify-between m-5 ">
+                {' '}
+                {/* Cambiado de m-4 a m-2 */}
                 {films.length > 0 ? (
                   films.map((film) => (
                     <MovieCard

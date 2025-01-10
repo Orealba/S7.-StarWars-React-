@@ -42,7 +42,7 @@ export const ShipInfoCard: React.FC<{ starship: Starship }> = ({
       <Link
         to={`/ships/${starship.id}/info`}
         className="block 
-            w-[1000px] sm:w-[400px] md:w-[800px] lg:w-[900px] xl:w-[1300px] 
+            w-[1000px] sm:w-[400px] md:w-[800px] lg:w-[900px] xl:w-[1400px] 
             h-[100px] sm:h-[80px] md:h-[255px] 
             p-3 sm:p-4 md:p-6 bg-gray-900/80 border border-gray-700 rounded-lg shadow 
             text-left
