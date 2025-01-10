@@ -1,17 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
 
-interface Pilot {
-  id: number;
-  name: string;
-  // Agrega más propiedades según la API de pilotos
-}
-
-interface Film {
-  id: number;
-  title: string;
-  // Agrega más propiedades según la API de películas
-}
-
 interface Starship {
   id: number;
   name: string;
@@ -29,8 +17,6 @@ interface ShipsInfoContextType {
   pilots: Pilot[];
   films: Film[];
   fetchStarshipById: (id: number) => Promise<void>;
-  fetchPilots: () => Promise<void>;
-  fetchFilms: () => Promise<void>;
 }
 
 const ShipsInfoContext = createContext<ShipsInfoContextType | undefined>(
@@ -50,33 +36,11 @@ export const ShipsInfoProvider: React.FC<{ children: React.ReactNode }> = ({
         `https://swapi.orealbasoriano.com/api/starships/${id}`,
       );
       const data = await response.json();
-      setStarship(data); // Asegúrate de que esto coincida con la estructura de tu API
+      setStarship(data);
+      setPilots(data.pilots);
+      setFilms(data.films);
     } catch (error) {
       console.error('Error fetching starship by ID:', error);
-    }
-  };
-
-  const fetchPilots = async (id: number) => {
-    try {
-      const response = await fetch(
-        `https://swapi.orealbasoriano.com/api/pilots/${id}`,
-      ); // Cambia la URL según tu API
-      const data = await response.json();
-      setPilots(data.data); // Asegúrate de que esto coincida con la estructura de tu API
-    } catch (error) {
-      console.error('Error fetching pilots:', error);
-    }
-  };
-
-  const fetchFilms = async (id: number) => {
-    try {
-      const response = await fetch(
-        `https://swapi.orealbasoriano.com/api/films/${id}`,
-      ); // Cambia la URL según tu API
-      const data = await response.json();
-      setFilms(data.data); // Asegúrate de que esto coincida con la estructura de tu API
-    } catch (error) {
-      console.error('Error fetching films:', error);
     }
   };
 
@@ -87,8 +51,6 @@ export const ShipsInfoProvider: React.FC<{ children: React.ReactNode }> = ({
         pilots,
         films,
         fetchStarshipById,
-        fetchPilots,
-        fetchFilms,
       }}>
       {children}
     </ShipsInfoContext.Provider>

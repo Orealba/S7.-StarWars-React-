@@ -1,26 +1,19 @@
 import { ShipInfoCard } from '../Components/ShipInfoCard';
 import { useParams } from 'react-router-dom';
-// import { Film } from '../Components/Film'; // Asegúrate de tener un componente para mostrar films
-import { useShipsInfoContext } from '../Context/ShipsInfoContext'; // Asegúrate de importar el nuevo contexto
+
+import { useShipsInfoContext } from '../Context/ShipsInfoContext'; 
 import bgInfo from '../assets/images/BgInfo.jpg';
 import { useEffect } from 'react';
+import { PilotCard } from '../Components/PilotCard';
+import { MovieCard } from '../Components/MovieCard';
 
 export const ShipFile = () => {
   const { id } = useParams<{ id: string }>(); // Cambia 'name' a 'id'
-  const {
-    starship,
-    pilots,
-    films,
-    fetchStarshipById,
-    fetchPilots,
-    fetchFilms,
-  } = useShipsInfoContext();
+  const { starship, pilots, films, fetchStarshipById } = useShipsInfoContext();
 
   useEffect(() => {
     if (id) {
-      fetchStarshipById(Number(id)); // Llama a la función con el ID de la nave
-      // fetchPilots(); // Opcional: si quieres cargar los pilotos
-      // fetchFilms(); // Opcional: si quieres cargar los films
+      fetchStarshipById(Number(id));
     }
   }, [id]);
 
@@ -55,13 +48,31 @@ export const ShipFile = () => {
               <h5 className="flex justify-start border-y-2 border-gray-400 pl-8 mt-4 ">
                 PILOTS
               </h5>
-              {/* Aquí puedes mapear y mostrar los pilotos */}
+              {pilots.length > 0 ? (
+                pilots.map((pilot) => (
+                  <PilotCard
+                    key={pilot.id}
+                    pilot={pilot}
+                  />
+                ))
+              ) : (
+                <div>No hay pilotos disponibles.</div>
+              )}
             </div>
             <div>
               <h5 className="flex justify-start border-y-2 border-gray-400 pl-8 mt-4">
                 FILMS
               </h5>
-              {/* Aquí puedes mapear y mostrar los films */}
+              {films.length > 0 ? (
+                films.map((film) => (
+                  <MovieCard
+                    key={film.id}
+                    film={film}
+                  />
+                ))
+              ) : (
+                <div>No hay pilotos disponibles.</div>
+              )}
             </div>
           </div>
         </main>
