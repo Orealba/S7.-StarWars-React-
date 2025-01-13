@@ -2,7 +2,7 @@ import { Home } from './Pages/Home';
 import './App.css';
 import { Header } from './Components/Header';
 import { Navbar } from './Components/Navbar';
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { Starships } from './Pages/Starships';
 import { StarshipProvider } from './Context/StarshipsContext';
 import { ShipFile } from './Pages/ShipFile';
@@ -14,8 +14,8 @@ import { Auth } from '@supabase/auth-ui-react';
 import { ThemeSupa } from '@supabase/auth-ui-shared';
 
 const supabase = createClient(
-  ***REMOVED***,
-  ***REMOVED***,
+  import.meta.env.VITE_SUPABASE_URL,
+  import.meta.env.VITE_SUPABASE_KEY,
 );
 
 function App() {
