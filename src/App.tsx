@@ -10,15 +10,16 @@ import { ShipsInfoProvider } from './Context/ShipsInfoContext';
 import { useState, useEffect } from 'react';
 import { createClient } from '@supabase/supabase-js';
 import { ProtectedRoute } from './Components/Utils/ProtectedRoute';
-import { Auth } from '@supabase/auth-ui-react';
-import { ThemeSupa } from '@supabase/auth-ui-shared';
+import { Login } from './Components/Login';
 
 const supabase = createClient(
   import.meta.env.VITE_SUPABASE_URL,
-  import.meta.env.VITE_SUPABASE_KEY,
+  import.meta.env.VITE_SUPABASE_ANON_KEY,
 );
 
 function App() {
+  console.log(import.meta.env.VITE_SUPABASE_URL);
+  console.log(import.meta.env.VITE_SUPABASE_ANON_KEY);
   const [session, setSession] = useState(null);
   const handleSignOut = () => {
     supabase.auth.signOut().then(() => {
@@ -26,6 +27,10 @@ function App() {
     });
   };
   useEffect(() => {
+    if (!supabase) {
+      console.error('Supabase client is not initialized');
+      return;
+    }
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
     });
@@ -56,13 +61,7 @@ function App() {
             />
             <Route
               path="/login"
-              element={
-                <Auth
-                  supabaseClient={supabase}
-                  appearance={{ theme: ThemeSupa }}
-                  providers={[]}
-                />
-              }></Route>
+              element={<Login supabase={supabase} />}></Route>
             <Route
               element={
                 <ProtectedRoute

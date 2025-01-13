@@ -3,10 +3,10 @@ import logo from '../assets/images/logo.png';
 import '../Components/styles/Header.css';
 
 interface HeaderProps {
-  session: any; // Ajusta el tipo según tu implementación
+  session: any;
   handleSignOut: () => void;
 }
-export const Header: React.FC<HeaderProps> = ({session, handleSignOut}) => {
+export const Header: React.FC<HeaderProps> = ({ session, handleSignOut }) => {
   console.log(typeof handleSignOut);
   return (
     <>
@@ -21,26 +21,28 @@ export const Header: React.FC<HeaderProps> = ({session, handleSignOut}) => {
           />
         </Link>
         <div className="flex gap-4 items-center justify-end">
-          {session ? ( // Verifica si hay sesión
+          {session ? (
             <button
               type="button"
-              onClick={handleSignOut} // Llama a la función al hacer clic
-              className="bg-transparent text-white font-medium rounded-lg text-sm px-0 text-center outline-none focus:outline-none hover:outline-none border-none focus:border-none hover:border-none ring-0 focus:ring-0 hover:ring-0 hover:scale-105 transition-transform">
+              onClick={handleSignOut}
+              className="bg-transparent text-white font-medium rounded-lg text-sm px-0 text-center outline-none focus:outline-none hover:outline-none border-none focus:border-none hover:border-none ring-0 focus:ring-0 hover:ring-0 hover:scale-105 transition-transform sm:text-base md:text-lg lg:text-sm">
               LOG OUT
             </button>
           ) : (
             <Link to="/login">
-              <button
-                type="button"
-                className="bg-transparent text-white font-medium rounded-lg text-sm px-0  text-center outline-none focus:outline-none hover:outline-none border-none focus:border-none hover:border-none ring-0 focus:ring-0 hover:ring-0 hover:scale-105 transition-transform">
-                LOG IN
-              </button>
-              <p className="text-gray-500">//</p>
-              <button
-                type="button"
-                className="bg-transparent text-white font-medium rounded-lg text-sm pl-0  text-center outline-none focus:outline-none hover:outline-none border-none focus:border-none hover:border-none ring-0 focus:ring-0 hover:ring-0 hover:scale-105 transition-transform">
-                SIGN UP
-              </button>
+              <div className="flex">
+                <button
+                  type="button"
+                  className="bg-transparent text-white font-medium rounded-lg text-xs px-0 text-center outline-none focus:outline-none hover:outline-none border-none focus:border-none hover:border-none ring-0 focus:ring-0 hover:ring-0 hover:scale-105 transition-transform sm:text-xs md:text-sm lg:text-sm">
+                  LOG IN
+                </button>
+                <p className="text-gray-500">//</p>
+                <button
+                  type="button"
+                  className="bg-transparent text-white font-medium rounded-lg text-xs pl-0 text-center outline-none focus:outline-none hover:outline-none border-none focus:border-none hover:border-none ring-0 focus:ring-0 hover:ring-0 hover:scale-105 transition-transform sm:text-xs md:text-sm lg:text-sm">
+                  SIGN UP
+                </button>
+              </div>
             </Link>
           )}
         </div>

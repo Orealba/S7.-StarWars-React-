@@ -1,7 +1,8 @@
 import { Outlet } from 'react-router-dom';
-import { Auth } from '@supabase/auth-ui-react';
-import { ThemeSupa } from '@supabase/auth-ui-shared';
+
 import { SupabaseClient } from '@supabase/supabase-js';
+
+import { Login } from '../Login';
 
 interface ProtectedRouteProps {
   canActivate: boolean;
@@ -12,13 +13,7 @@ export const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
   supabase,
 }) => {
   if (canActivate) {
-    return (
-      <Auth
-        supabaseClient={supabase}
-        appearance={{ theme: ThemeSupa }}
-        providers={[]}
-      />
-    );
+    return <Login supabase={supabase} />;
   }
 
   return <Outlet />;
