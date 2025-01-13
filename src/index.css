@@ -2,8 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-.c-bOcPnF-cmFMMs-color-primary {
-  /* font-bold text-white bg-black border-2 border-yellow-400 rounded-full hover:bg-yellow-400 hover:text-black hover:scale-105 transition-all duration-300 font-['Star_Jedi'] */
+.c-bOcPnF {
+  font-weight: bold !important;
+  color: white !important;
+  background-color: black !important;
+  border: 2 !important;
+  
+  border-color: rgb(227, 160, 8) !important;
+
+  
+}
+
+.c-bOcPnF:hover {
+  background-color: rgb(227, 160, 8) !important;
 }
 @font-face {
   font-family: 'Star Jedi';
@@ -32,6 +43,7 @@
 #email,
 #password {
   color: #f9f9f9;
+  border-color: rgb(227, 160, 8) !important;
 }
 a {
   font-weight: 500;
