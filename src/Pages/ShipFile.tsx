@@ -19,7 +19,7 @@ export const ShipFile = () => {
 
   return (
     <>
-      <div className="h-screen overflow-y-auto">
+      <div className=" overflow-y-auto">
         <main
           style={{
             position: 'absolute',
@@ -31,6 +31,7 @@ export const ShipFile = () => {
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
             backgroundAttachment: 'fixed',
+            height: '120dvh',
           }}>
           <div className="pl-8 mt-0">
             <div>

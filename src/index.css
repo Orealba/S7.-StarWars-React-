@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+.c-bOcPnF-cmFMMs-color-primary {
+  /* font-bold text-white bg-black border-2 border-yellow-400 rounded-full hover:bg-yellow-400 hover:text-black hover:scale-105 transition-all duration-300 font-['Star_Jedi'] */
+}
 @font-face {
   font-family: 'Star Jedi';
   src: url('./assets/fonts/Starjedi.ttf') format('truetype');
@@ -26,7 +29,8 @@
   margin: 0;
   padding: 0;
 }
-#email, #password {
+#email,
+#password {
   color: #f9f9f9;
 }
 a {

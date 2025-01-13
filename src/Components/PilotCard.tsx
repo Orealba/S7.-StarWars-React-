@@ -21,17 +21,17 @@ export const PilotCard: React.FC<{ pilot: Pilot; starship: Starship }> = ({
     const fetchImage = async () => {
       try {
         const response = await fetch(
-          `https://starwars-visualguide.com/assets/img/characters/${pilot.id}.jpg`, // Asegúrate de que esto sea correcto
+          `https://starwars-visualguide.com/assets/img/characters/${pilot.id}.jpg`,
         );
         if (response.ok) {
           setImageUrl(response.url); // Establece la URL de la imagen
         } else {
           console.error('Error fetching image:', response.status);
-          setImageError(true); // Marca que hubo un error al cargar la imagen
+          setImageError(true); 
         }
       } catch (error) {
         console.error('Error fetching image:', error);
-        setImageError(true); // Marca que hubo un error al cargar la imagen
+        setImageError(true); 
       }
     };
 
