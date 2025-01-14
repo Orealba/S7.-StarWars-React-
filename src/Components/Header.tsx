@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import logo from '../assets/images/logo.png';
-import '../Components/styles/Header.css';
 
 interface HeaderProps {
   session: any;
