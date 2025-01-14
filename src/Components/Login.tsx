@@ -1,4 +1,3 @@
-import { supabase } from '@supabase/auth-ui-shared';
 import { Auth } from '@supabase/auth-ui-react';
 import { ThemeSupa } from '@supabase/auth-ui-shared';
 import { useEffect } from 'react';
@@ -9,9 +8,9 @@ export const Login = ({ supabase, session }) => {
   const navigate = useNavigate();
   useEffect(() => {
     if (session) {
-      navigate('/ships'); // Redirige a la página de Starships si hay sesión
+      navigate('/ships');
     }
-  }, [session, navigate]); // Dependencias del useEffect
+  }, [session, navigate]);
 
   return (
     <div>

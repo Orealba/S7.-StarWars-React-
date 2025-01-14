@@ -30,7 +30,7 @@ export const Header: React.FC<HeaderProps> = ({ session, handleSignOut }) => {
             </button>
           ) : (
             <Link to="/login">
-              <div className="flex">]
+              <div className="flex">
                 <button
                   type="button"
                   className="bg-transparent text-white font-medium rounded-lg text-xs px-0 text-center outline-none focus:outline-none hover:outline-none border-none focus:border-none hover:border-none ring-0 focus:ring-0 hover:ring-0 hover:scale-105 transition-transform sm:text-xs md:text-sm lg:text-sm">

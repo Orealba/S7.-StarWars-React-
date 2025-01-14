@@ -24,14 +24,14 @@ export const PilotCard: React.FC<{ pilot: Pilot; starship: Starship }> = ({
           `https://starwars-visualguide.com/assets/img/characters/${pilot.id}.jpg`,
         );
         if (response.ok) {
-          setImageUrl(response.url); // Establece la URL de la imagen
+          setImageUrl(response.url);
         } else {
           console.error('Error fetching image:', response.status);
-          setImageError(true); 
+          setImageError(true);
         }
       } catch (error) {
         console.error('Error fetching image:', error);
-        setImageError(true); 
+        setImageError(true);
       }
     };
 
@@ -60,6 +60,8 @@ export const PilotCard: React.FC<{ pilot: Pilot; starship: Starship }> = ({
             />
           ) : (
             <div>
+              {/* //AQUI DEBES HACER LO DE LA IMAGEN SI NO APARECE PONER OTRA
+              GENÉRICA */}
               <span className="text-gray-400">Imagen no disponible</span>{' '}
               {/* Mensaje alternativo */}
             </div>

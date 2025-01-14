@@ -19,7 +19,7 @@ export const ShipFile = () => {
 
   return (
     <>
-      <div className=" overflow-y-auto">
+      <div className=" overflow-y-auto ">
         <main
           style={{
             position: 'absolute',
@@ -31,16 +31,16 @@ export const ShipFile = () => {
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
             backgroundAttachment: 'fixed',
-            height: '120dvh',
+            height: '160dvh',
           }}>
-          <div className="pl-8 mt-0">
+          <div className="pl-8 mt-0 ">
             <div>
               <h5 className="flex justify-start border-y-2 border-gray-400 pl-8 mb-4">
                 STARSHIP
               </h5>
 
               {starship ? (
-                <ShipInfoCard starship={starship} /> // Pasa el objeto starship completo
+                <ShipInfoCard starship={starship} />
               ) : (
                 <div>No hay información de la nave disponible.</div>
               )}
@@ -68,8 +68,6 @@ export const ShipFile = () => {
                 FILMS
               </h5>
               <div className="flex justify-between m-5 ">
-                {' '}
-                {/* Cambiado de m-4 a m-2 */}
                 {films.length > 0 ? (
                   films.map((film) => (
                     <MovieCard
@@ -78,7 +76,7 @@ export const ShipFile = () => {
                     />
                   ))
                 ) : (
-                  <div>No hay películas disponibles.</div> // Corregido el texto
+                  <div>No hay películas disponibles.</div>
                 )}
               </div>
             </div>

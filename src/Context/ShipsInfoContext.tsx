@@ -1,21 +1,21 @@
 import React, { createContext, useContext, useState } from 'react';
 
 interface Pilot {
-    id: number;
-    name: string;
-  }
-  
-  interface Film {
-    id: number;
-    title: string;
-  }
+  id: number;
+  name: string;
+}
+
+interface Film {
+  id: number;
+  title: string;
+}
 interface Starship {
   id: number;
   name: string;
   model: string;
   manufacturer: string;
   cost_in_credits: string;
-  length: string;
+  length: number;
   max_atmosphering_speed: string;
   crew: string;
   pilots: string[];

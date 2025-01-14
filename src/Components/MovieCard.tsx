@@ -14,17 +14,17 @@ export const MovieCard: React.FC<{ film: Film }> = ({ film }) => {
     const fetchImage = async () => {
       try {
         const response = await fetch(
-          `https://starwars-visualguide.com/assets/img/films/${film.id}.jpg`, // URL de la imagen
+          `https://starwars-visualguide.com/assets/img/films/${film.id}.jpg`, 
         );
         if (response.ok) {
-          setImageUrl(response.url); // Establece la URL de la imagen
+          setImageUrl(response.url); 
         } else {
           console.error('Error fetching image:', response.status);
-          setImageError(true); // Marca que hubo un error al cargar la imagen
+          setImageError(true); 
         }
       } catch (error) {
         console.error('Error fetching image:', error);
-        setImageError(true); // Marca que hubo un error al cargar la imagen
+        setImageError(true); 
       }
     };
 
@@ -49,9 +49,10 @@ export const MovieCard: React.FC<{ film: Film }> = ({ film }) => {
             <img
               src={imageUrl}
               alt={film.title}
-              className="max-w-65" // Ajusta el tamaño según sea necesario
+              className="max-w-65" 
             />
           ) : (
+            //AQUI DEBES HACER LO DE LA IMAGEN SI NO APARECE PONER OTRA GENÉRICA
             <div className="bg-gray-700 h-full flex items-center justify-center">
               <span className="text-gray-400">Imagen no disponible</span>{' '}
               {/* Mensaje alternativo */}

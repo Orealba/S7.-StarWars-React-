@@ -3,6 +3,17 @@ import bgImage from '../assets/images/bg.webp';
 import { useStarshipContext } from '../Context/StarshipsContext';
 import { useState } from 'react';
 
+interface Starship {
+  id: number;
+  name: string;
+  model: string;
+  manufacturer: string;
+  cost_in_credits: string;
+  length: number; // Cambia a number si es necesario
+  max_atmosphering_speed: string;
+  crew: string;
+  pilots: string[];
+}
 export const Starships = () => {
   return <StarshipContent />;
 };
@@ -25,7 +36,6 @@ const StarshipContent = () => {
           top: 170,
           left: 0,
           right: 0,
-          // bottom: 0,
           backgroundImage: `url(${bgImage})`,
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
