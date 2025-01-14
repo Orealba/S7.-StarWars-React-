@@ -16,10 +16,10 @@ export const StarshipCard: React.FC<{ starship: Starship }> = ({
   return (
     <div className="grid gap-4 p-4">
       <Link
-        to={`/ships/${starship.id}/info`} // Cambia la ruta según tu configuración
+        to={`/ships/${starship.id}/info`} 
         className="block 
-            w-[400px] sm:w-[400px] md:w-[600px] lg:w-[800px] xl:w-[1100px] 
-            h-[70px] sm:h-[80px] md:h-[100px] 
+            w-[19rem] sm:w-[25rem] md:w-[500px] lg:w-[50rem] xl:w-[70rem] 
+            h-100px] sm:h-[80px] md:h-[110px] 
             p-3 sm:p-4 md:p-6 bg-gray-800/50 border border-gray-700 rounded-lg shadow 
             hover:bg-gray-700/50 transition-all duration-300 transform 
             hover:scale-[1.02] text-left

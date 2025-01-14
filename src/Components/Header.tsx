@@ -10,7 +10,7 @@ export const Header: React.FC<HeaderProps> = ({ session, handleSignOut }) => {
   console.log(typeof handleSignOut);
   return (
     <>
-      <div className="bg-black grid grid-cols-3 fixed top-0 pb-6 left-1/2 transform -translate-x-1/2 z-50 w-full px-4">
+      <div className="bg-black grid grid-cols-3 fixed top-0 pb-10 left-1/2 transform -translate-x-1/2 z-50 w-full px-4">
         <Link
           to="/"
           className="mt-4 col-start-2">
@@ -30,7 +30,7 @@ export const Header: React.FC<HeaderProps> = ({ session, handleSignOut }) => {
             </button>
           ) : (
             <Link to="/login">
-              <div className="flex">
+              <div className="flex">]
                 <button
                   type="button"
                   className="bg-transparent text-white font-medium rounded-lg text-xs px-0 text-center outline-none focus:outline-none hover:outline-none border-none focus:border-none hover:border-none ring-0 focus:ring-0 hover:ring-0 hover:scale-105 transition-transform sm:text-xs md:text-sm lg:text-sm">

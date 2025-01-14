@@ -42,27 +42,28 @@ export const ShipInfoCard: React.FC<{ starship: Starship }> = ({
       <Link
         to={`/ships/${starship.id}/info`}
         className="block 
-            w-[1000px] sm:w-[400px] md:w-[800px] lg:w-[900px] xl:w-[1400px] 
-            h-[100px] sm:h-[80px] md:h-[255px] 
+            w-[62.5rem] sm:w-[25rem] md:w-[50rem] lg:w-[56.25rem] xl:w-[87.5rem] 
+            h-[6.25rem] sm:h-[5rem] md:h-[15.9375rem] 
             p-3 sm:p-4 md:p-6 bg-gray-900/80 border border-gray-700 rounded-lg shadow 
             text-left
             mx-auto"
         style={{ cursor: 'default' }}>
         <div className="flex">
           <div className="w-1/3 ">
-           
             {imageUrl && (
               <img
                 src={imageUrl}
                 alt={starship.name}
-                className="max-w-80"
+                className="max-w-[10rem] sm:max-w-[5rem]"
               />
             )}
           </div>
           <div className="w-1/2 pl-2">
             {' '}
             {/* Columna para el título y otros datos, ajustando el padding izquierdo */}
-            <h4 className="text-2xl mb-5 font-bold text-gray-400">{starship.name}</h4>
+            <h4 className="text-2xl mb-5 font-bold text-gray-400">
+              {starship.name}
+            </h4>
             <div className="flex ">
               <div className="flex flex-col w-1/2">
                 {' '}
