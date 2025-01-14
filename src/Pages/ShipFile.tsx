@@ -31,12 +31,12 @@ export const ShipFile = () => {
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
             backgroundAttachment: 'fixed',
-            height: '160dvh',
+            height: '130dvh',
           }}>
           <div className="pl-8 mt-0 ">
             <div>
               <h5 className="flex justify-start border-y-2 border-gray-400 pl-8 mb-4">
-                STARSHIP
+                NAVES
               </h5>
 
               {starship ? (
@@ -47,17 +47,20 @@ export const ShipFile = () => {
             </div>
             <div>
               <h5 className="flex justify-start border-y-2 border-gray-400 pl-8 mt-4 ">
-                PILOTS
+                PILOTOS
               </h5>
               <div className="flex justify-between m-6">
                 {pilots.length > 0 ? (
-                  pilots.map((pilot) => (
-                    <PilotCard
-                      key={pilot.id}
-                      pilot={pilot}
-                      starship={starship}
-                    />
-                  ))
+                  pilots.map(
+                    (pilot) =>
+                      starship && (
+                        <PilotCard
+                          key={pilot.id}
+                          pilot={pilot}
+                          starship={starship}
+                        />
+                      ),
+                  )
                 ) : (
                   <div>No hay pilotos disponibles.</div>
                 )}
@@ -65,7 +68,7 @@ export const ShipFile = () => {
             </div>
             <div>
               <h5 className="flex justify-start border-y-2 border-gray-400 pl-8 mt-4 ">
-                FILMS
+                PELICULAS
               </h5>
               <div className="flex justify-between m-5 ">
                 {films.length > 0 ? (

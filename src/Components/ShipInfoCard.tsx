@@ -38,7 +38,7 @@ export const ShipInfoCard: React.FC<{ starship: Starship }> = ({
     fetchImage();
   }, [starship.id]);
   if (!starship) {
-    return <div>No hay información de la nave disponible.</div>; // Manejo del caso null
+    return <div>No hay información de la nave disponible.</div>;
   }
 
   return (
@@ -47,7 +47,7 @@ export const ShipInfoCard: React.FC<{ starship: Starship }> = ({
         to={`/ships/${starship.id}/info`}
         className="block 
             w-[20rem] sm:w-[10rem] md:w-[60rem] lg:w-[58rem] xl:w-[87.5rem] 
-            h-[6.25rem] sm:h-[5rem] md:h-[15.9375rem] 
+            h-[35rem] sm:h-[5rem] md:h-[16rem] 
             p-3 sm:p-4 md:p-6 bg-gray-900/80 border border-gray-700 rounded-lg shadow 
             text-left
             mx-auto hover:text-inherit"
@@ -58,7 +58,7 @@ export const ShipInfoCard: React.FC<{ starship: Starship }> = ({
               <img
                 src={imageUrl}
                 alt={starship.name}
-                className="max-w-[10rem] sm:max-w-[20rem]"
+                className="max-w-[10rem] sm:max-w-[12rem] md:max-w-[16rem] lg:max-w-[1rem] xl:max-w-[18rem]"
               />
             ) : (
               <div className="">

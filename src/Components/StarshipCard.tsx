@@ -6,9 +6,10 @@ interface Starship {
   model: string;
   manufacturer: string;
   cost_in_credits: string;
-  length: number;
-  max_atmosphering_speed: number;
-  crew: number;
+  length: string;
+  max_atmosphering_speed: string;
+  crew: string;
+  pilots: string[];
 }
 export const StarshipCard: React.FC<{ starship: Starship }> = ({
   starship,
@@ -16,7 +17,7 @@ export const StarshipCard: React.FC<{ starship: Starship }> = ({
   return (
     <div className="grid gap-4 p-4">
       <Link
-        to={`/ships/${starship.id}/info`} 
+        to={`/ships/${starship.id}/info`}
         className="block 
             w-[19rem] sm:w-[25rem] md:w-[500px] lg:w-[50rem] xl:w-[70rem] 
             h-100px] sm:h-[80px] md:h-[110px] 

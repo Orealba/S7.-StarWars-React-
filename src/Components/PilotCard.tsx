@@ -12,7 +12,6 @@ interface Starship {
 
 export const PilotCard: React.FC<{ pilot: Pilot; starship: Starship }> = ({
   pilot,
-  starship,
 }) => {
   const [imageUrl, setImageUrl] = useState<string | null>(null);
   const [imageError, setImageError] = useState<boolean>(false);
@@ -60,10 +59,7 @@ export const PilotCard: React.FC<{ pilot: Pilot; starship: Starship }> = ({
             />
           ) : (
             <div>
-              {/* //AQUI DEBES HACER LO DE LA IMAGEN SI NO APARECE PONER OTRA
-              GENÉRICA */}
-              <span className="text-gray-400">Imagen no disponible</span>{' '}
-              {/* Mensaje alternativo */}
+              <span className="text-gray-400">Imagen no disponible</span>
             </div>
           )}
 

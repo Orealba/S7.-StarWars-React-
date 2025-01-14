@@ -3,8 +3,13 @@ import { ThemeSupa } from '@supabase/auth-ui-shared';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import darth from '../assets/images/Darth.png';
+import { SupabaseClient, Session } from '@supabase/supabase-js'; 
+interface LoginProps {
+  supabase: SupabaseClient; 
+  session: Session | null; 
+}
 
-export const Login = ({ supabase, session }) => {
+export const Login: React.FC<LoginProps> = ({ supabase, session }) => {
   const navigate = useNavigate();
   useEffect(() => {
     if (session) {

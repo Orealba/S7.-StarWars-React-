@@ -8,7 +8,7 @@ import { StarshipProvider } from './Context/StarshipsContext';
 import { ShipFile } from './Pages/ShipFile';
 import { ShipsInfoProvider } from './Context/ShipsInfoContext';
 import { useState, useEffect } from 'react';
-import { createClient } from '@supabase/supabase-js';
+import { createClient, Session } from '@supabase/supabase-js';
 import { ProtectedRoute } from './Components/Utils/ProtectedRoute';
 import { Login } from './Components/Login';
 
@@ -18,9 +18,7 @@ const supabase = createClient(
 );
 
 function App() {
-  console.log(import.meta.env.VITE_SUPABASE_URL);
-  console.log(import.meta.env.VITE_SUPABASE_ANON_KEY);
-  const [session, setSession] = useState(null);
+  const [session, setSession] = useState<Session | null>(null);
   const handleSignOut = () => {
     supabase.auth.signOut().then(() => {
       window.location.reload();
@@ -61,12 +59,18 @@ function App() {
             />
             <Route
               path="/login"
-              element={<Login supabase={supabase} />}></Route>
+              element={
+                <Login
+                  supabase={supabase}
+                  session={session}
+                />
+              }></Route>
             <Route
               element={
                 <ProtectedRoute
                   canActivate={!session}
                   supabase={supabase}
+                  session={session}
                 />
               }>
               <Route
