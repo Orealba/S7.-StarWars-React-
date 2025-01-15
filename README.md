@@ -1,50 +1,67 @@
-# React + TypeScript + Vite
+# Star Wars Starship Viewer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descripción
 
-Currently, two official plugins are available:
+Este proyecto es una aplicación web que permite a los usuarios explorar un listado de naves del universo de Star Wars. La aplicación utiliza React y TypeScript para ofrecer una experiencia de usuario fluida y tipada. Los estilos se gestionan mediante Tailwind CSS y Flowbite, proporcionando un diseño moderno.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Características
 
-## Expanding the ESLint configuration
+- **Listado de Naves**: Muestra un listado inicial de 10 naves obtenidas de una API. Los usuarios pueden cargar más naves haciendo clic en un botón que carga 10 naves adicionales.
+- **Rutas Protegidas**: Los usuarios deben iniciar sesión para acceder a las rutas protegidas donde se encuentran las naves. Esto se gestiona mediante un sistema de autenticación utilizando Supabase.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Detalles de Naves**: Al hacer clic en una nave, los usuarios son redirigidos a una página de detalles donde se muestra información completa sobre la nave, incluyendo:
 
-- Configure the top-level `parserOptions` property like this:
+  - Información de la nave
+  - Pilotos asociados
+  - Películas en las que aparece
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **Imágenes de Tarjetas**: Se realiza un nuevo llamado a otra API para obtener imágenes de las naves, pilotos y películas, utilizando los IDs correspondientes para mostrar imágenes en las tarjetas.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Tecnologías Utilizadas
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- **React**: Biblioteca de JavaScript para construir interfaces de usuario.
+- **TypeScript**: Superset de JavaScript que añade tipado estático.
+- **Tailwind CSS**: Framework de CSS para un diseño moderno.
+- **Flowbite**: Componentes de UI construidos sobre Tailwind CSS.
+- **Supabase**: Plataforma de backend que proporciona autenticación y gestión de datos.
+- **API de Star Wars**: API utilizada para obtener información sobre naves, pilotos y películas.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Instalación
+
+1. Clona el repositorio:
+
+   ```bash
+   git clone https://github.com/tu-usuario/star-wars-starship-viewer.git
+   ```
+
+2. Navega al directorio del proyecto:
+
+   ```bash
+   cd star-wars-starship-viewer
+   ```
+
+3. Instala las dependencias:
+
+   ```bash
+   npm install
+   ```
+
+4. Configura las variables de entorno para Supabase en un archivo `.env`:
+
+   ```
+   VITE_SUPABASE_URL=tu_url_de_supabase
+   VITE_SUPABASE_ANON_KEY=tu_clave_anónima
+   ```
+
+5. Inicia la aplicación:
+   ```bash
+   npm run dev
+   ```
+
+## Contribuciones
+
+Las contribuciones son bienvenidas. Si deseas contribuir, por favor abre un issue o envía un pull request.
+
+## Licencia
+
+Este proyecto está bajo la Licencia MIT. Para más detalles, consulta el archivo LICENSE.
