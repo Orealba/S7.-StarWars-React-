@@ -31,7 +31,7 @@ export const ShipFile = () => {
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
             backgroundAttachment: 'fixed',
-            height: '130dvh',
+            height: '150dvh',
           }}>
           <div className="pl-8 mt-0 ">
             <div>
